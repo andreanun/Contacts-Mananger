@@ -1,10 +1,10 @@
-package com.contactsmanager;
+package com.contactsmanager.contact;
 
 import com.contactsmanager.contact.Contact;
+import com.contactsmanager.contact.ContactRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import lombok.extern.slf4j.XSlf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -42,7 +42,7 @@ public class ContactService {
 
     }
     public String uploadPhoto(String id, MultipartFile file) {
-        log.info("Saving photo for " + id);
+        log.info("Saving photo for user " + id);
         Contact contact = getContact(id);
         String photoUrl = photoFunction.apply(id, file);
         contact.setPhotoUrl(photoUrl);

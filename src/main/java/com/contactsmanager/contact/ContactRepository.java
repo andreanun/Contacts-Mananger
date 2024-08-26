@@ -1,4 +1,4 @@
-package com.contactsmanager;
+package com.contactsmanager.contact;
 
 import com.contactsmanager.contact.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;
