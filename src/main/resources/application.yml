@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/template1
+    url: ${env.SPRING_DATASOURCE_URL}
     username:
     password:
   jpa:
