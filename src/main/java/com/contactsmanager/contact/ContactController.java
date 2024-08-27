@@ -1,5 +1,6 @@
 package com.contactsmanager.contact;
 
+import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,23 +15,21 @@ import static com.contactsmanager.constants.Constant.*;
 import static org.springframework.util.MimeTypeUtils.IMAGE_JPEG_VALUE;
 import static org.springframework.util.MimeTypeUtils.IMAGE_PNG_VALUE;
 
+@AllArgsConstructor
 @RestController
+@RequestMapping("/api/v1/contacts")
 public class ContactController {
     private final ContactService contactService;
-
-    public ContactController(ContactService contactService) {
-        this.contactService = contactService;
-    }
-
-    @PostMapping
-    public ResponseEntity<Contact> createContact(@RequestBody Contact contact) {
-        return ResponseEntity.created(URI.create("/contacts/userID")).body(contactService.createContact(contact));
-    }
 
     @GetMapping
     public ResponseEntity<Page<Contact>> getContacts(@RequestParam(value = "page", defaultValue = "0") int page,
                                                      @RequestParam(value = "size", defaultValue = "10") int size) {
         return ResponseEntity.ok().body(contactService.getAllContacts(page, size));
+    }
+
+    @PostMapping
+    public ResponseEntity<Contact> createContact(@RequestBody Contact contact) {
+        return ResponseEntity.created(URI.create("/contacts/userID")).body(contactService.createContact(contact));
     }
 
     @GetMapping("/{id}")
@@ -42,7 +41,6 @@ public class ContactController {
     public ResponseEntity<String> uploadPhoto(@RequestParam("id") String id, @RequestParam("file") MultipartFile file) {
         return ResponseEntity.ok().body(contactService.uploadPhoto(id, file));
     }
-
 
     @GetMapping(path = "/image/{filename}", produces = { IMAGE_PNG_VALUE, IMAGE_JPEG_VALUE })
     public byte[] getPhoto(@PathVariable("filename") String filename) throws IOException {

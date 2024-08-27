@@ -33,7 +33,7 @@ public class ContactService {
         return contactRepository.findAll(PageRequest.of(page, size, Sort.by("name")));
     }
     public Contact getContact(String id) {
-        return contactRepository.findById(id).orElseThrow(() -> new RuntimeException("Sorry :(. Contact not found"));
+        return contactRepository.findById(id).orElseThrow(() -> new RuntimeException("Sorry :( Contact not found"));
     }
     public Contact createContact(Contact contact) {
         return contactRepository.save(contact);
