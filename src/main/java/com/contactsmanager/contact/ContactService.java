@@ -1,7 +1,5 @@
 package com.contactsmanager.contact;
 
-import com.contactsmanager.contact.Contact;
-import com.contactsmanager.contact.ContactRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -38,7 +36,10 @@ public class ContactService {
     public Contact createContact(Contact contact) {
         return contactRepository.save(contact);
     }
-    public void deleteContact(Contact contact) {
+    public void deleteContact(String id) {
+        Contact contact =  contactRepository.findById(id).orElseThrow(
+                () -> new ContactNotFoundException("Contact by id: " + id + "does not exist.")
+        );
 
     }
     public String uploadPhoto(String id, MultipartFile file) {
