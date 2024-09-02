@@ -40,7 +40,7 @@ public class ContactService {
         Contact contact =  contactRepository.findById(id).orElseThrow(
                 () -> new ContactNotFoundException("Contact by id: " + id + "does not exist.")
         );
-
+        contactRepository.deleteById(id);
     }
     public String uploadPhoto(String id, MultipartFile file) {
         log.info("Saving photo for user " + id);
