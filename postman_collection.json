@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "491a8312-d740-4099-9385-52fd808107f3",
+		"name": "Contacts Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30159416"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/contacts/image/a43a22dd-78d8-45c1-b7a7-2cc6c1a238f2.webp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/contacts/image/a43a22dd-78d8-45c1-b7a7-2cc6c1a238f2.webp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"contacts",
+						"image",
+						"a43a22dd-78d8-45c1-b7a7-2cc6c1a238f2.webp"
+					]
+				},
+				"description": "get johnny bravo photo"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/contacts/image/c9a2ade2-fe86-4b85-8376-210ffdd6c4bf.webp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/contacts/image/c9a2ade2-fe86-4b85-8376-210ffdd6c4bf.webp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"contacts",
+						"image",
+						"c9a2ade2-fe86-4b85-8376-210ffdd6c4bf.webp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/contacts/photo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "c9a2ade2-fe86-4b85-8376-210ffdd6c4bf",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/anunoo/Documents/ContactsManager/mycontacts/images/kim_possible.webp"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/contacts/photo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"contacts",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/contacts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Kim Possible\",\n    \"email\": \"kimpossible@yahoo.com\",\n    \"address\": \"San Diego, California\",\n    \"title\": \"Manager\",\n    \"status\": \"Active\",\n    \"phone\": \"738-383-3737\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
