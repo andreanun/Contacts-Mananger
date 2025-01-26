@@ -14,15 +14,6 @@ MVP Features:
 - Pagination
 - Toast Notifications
 
-## Screenshot
-
-![Home Screen](src/assets/screenshot1.png)
-
-![Update Contact](src/assets/edit_messi.png)
-
-![Toast Notification](src/assets/updated_messi.png)
-
-![Toast Notification](src/assets/lebron_contact.png)
 
 **Future Plans:**
 
